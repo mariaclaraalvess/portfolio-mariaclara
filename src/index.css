@@ -1,0 +1,45 @@
+/* src/index.css */
+
+/* variáveis de tema (cores em HSL-like para integração com componentes shadcn) */
+:root {
+    --background: 266 100% 98%;
+    --foreground: 266 50% 10%;
+    --card: 266 100% 100%;
+    --card-foreground: 266 50% 10%;
+    --popover: 266 100% 100%;
+    --popover-foreground: 266 50% 10%;
+    --primary: 263 83% 64%;
+    /* seu roxo médio */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 263 60% 90%;
+    --secondary-foreground: 263 80% 30%;
+    --muted: 263 40% 95%;
+    --muted-foreground: 263 30% 40%;
+    --accent: 263 83% 64%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 263 30% 80%;
+    --input: 263 30% 80%;
+    --ring: 263 83% 64%;
+    --radius: 1rem;
+}
+
+/* Tailwind directives (depois/seguido das variáveis está OK) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* regras extras */
+html {
+    scroll-behavior: smooth;
+}
+
+/* exemplo: utilitários simples que usam variáveis (opcional) */
+.bg-background {
+    background-color: hsl(var(--background));
+}
+
+.text-primary {
+    color: hsl(var(--primary));
+}

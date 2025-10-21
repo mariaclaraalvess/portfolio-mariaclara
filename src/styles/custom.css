@@ -1,0 +1,29 @@
+@layer base {
+    :root {
+        --color-primary: #8b5cf6;
+        --color-primary-light: #c4b5fd;
+        --color-primary-dark: #6d28d9;
+        --color-background: #0f0a1a;
+    }
+}
+
+@layer utilities {
+    .bg-background {
+        background-color: var(--color-background);
+    }
+
+    .text-primary {
+        color: var(--color-primary);
+    }
+}
+
+/* Gradientes e animações suaves */
+body {
+    background: radial-gradient(circle at 30% 30%, #1a102a, #0f0a1a);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
