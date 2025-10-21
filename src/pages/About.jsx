@@ -1,95 +1,54 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+import minhaFoto from "@/assets/maria.jpg"; // 👈 caminho da sua imagem real
 
-const projects = [
-    {
-        title: "Portfólio Pessoal",
-        description:
-            "Meu site pessoal desenvolvido com React.js e TailwindCSS, focado em animações suaves e um design limpo.",
-        tech: ["React", "TailwindCSS", "Framer Motion"],
-        link: "#",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800",
-    },
-    {
-        title: "Landing Page de Café",
-        description:
-            "Uma landing page moderna e responsiva para uma marca fictícia de café artesanal.",
-        tech: ["HTML", "CSS", "JavaScript"],
-        link: "#",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
-    },
-    {
-        title: "App de Tarefas",
-        description:
-            "Aplicativo simples de gerenciamento de tarefas com React e armazenamento local.",
-        tech: ["React", "LocalStorage"],
-        link: "#",
-        image: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800",
-    },
-];
-
-export default function Projects() {
+export default function About() {
     return (
         <section
-            id="projects"
-            className="min-h-screen flex flex-col justify-center items-center bg-background text-white px-6 py-20"
+            id="about"
+            className="min-h-screen flex flex-col md:flex-row justify-center items-center bg-background text-white px-6 py-20 gap-12"
         >
-            <motion.h2
-                initial={{ opacity: 0, y: -30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+            {/* Foto com animação */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="text-4xl font-bold text-primary mb-12"
+                className="flex justify-center"
             >
-                Projetos
-            </motion.h2>
+                <img
+                    src={minhaFoto}
+                    alt="Maria Clara Carvalho Alves"
+                    className="w-64 h-64 object-cover rounded-full shadow-lg border-4 border-primary/50 backdrop-blur-md"
+                />
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.2, duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition"
-                    >
-                        <div className="h-48 overflow-hidden">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-full object-cover hover:scale-110 transition duration-500"
-                            />
-                        </div>
-                        <div className="p-6 flex flex-col justify-between h-60">
-                            <div>
-                                <h3 className="text-2xl font-semibold text-primary mb-3">
-                                    {project.title}
-                                </h3>
-                                <p className="text-gray-300 text-base mb-4">
-                                    {project.description}
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tech.map((tech, i) => (
-                                        <span
-                                            key={i}
-                                            className="bg-secondary text-secondary-foreground px-3 py-1 text-sm rounded-full"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                            <a
-                                href={project.link}
-                                className="mt-4 inline-block text-primary hover:text-primary/80 font-medium transition"
-                            >
-                                Ver projeto →
-                            </a>
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+            {/* Texto */}
+            <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="max-w-xl text-center md:text-left"
+            >
+                <h2 className="text-4xl font-bold text-primary mb-6">Sobre mim</h2>
+                <p className="text-gray-300 mb-4 text-lg leading-relaxed">
+                    Sou <strong>Maria Clara Carvalho Alves</strong>, desenvolvedora Front-End Júnior
+                    apaixonada por criar interfaces modernas, acessíveis e cheias de personalidade.
+                    Tenho experiência com <strong>React.js</strong>, <strong>TailwindCSS</strong> e
+                    <strong> animações com Framer Motion</strong>.
+                </p>
+                <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+                    Gosto de transformar ideias em experiências digitais fluidas e intuitivas —
+                    sempre com atenção aos detalhes e um toque criativo 💜.
+                </p>
+                <a
+                    href="#projects"
+                    className="inline-block bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-primary/80 transition"
+                >
+                    Ver meus projetos
+                </a>
+            </motion.div>
         </section>
     );
 }

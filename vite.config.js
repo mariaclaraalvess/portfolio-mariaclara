@@ -1,18 +1,16 @@
-// vite.config.js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
+import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 
-// Corrige __dirname e process.cwd() em módulos ES
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
+  base: "/portfolio-mariaclara/", // 👈 nome exato do repositório no GitHub
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });
