@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuAberto, setMenuAberto] = useState(false);
 
     const links = [
         { href: "#home", label: "Início" },
@@ -13,12 +12,12 @@ export default function Header() {
     ];
 
     return (
-        <header className="fixed w-full top-0 bg-background/70 backdrop-blur-md shadow-sm z-50">
+        <header className="fixed top-0 w-full bg-background/70 backdrop-blur-md shadow-sm z-50">
             <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
                 <h1 className="text-xl font-bold text-primary">Maria Clara</h1>
 
-                {/* Desktop menu */}
-                <nav className="hidden md:flex space-x-6">
+                {/* menu desktop */}
+                <nav className="hidden md:flex gap-6">
                     {links.map((link) => (
                         <a
                             key={link.href}
@@ -30,24 +29,24 @@ export default function Header() {
                     ))}
                 </nav>
 
-                {/* Mobile menu toggle */}
+                {/* botão menu mobile */}
                 <button
                     className="md:hidden text-primary"
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    onClick={() => setMenuAberto(!menuAberto)}
                 >
-                    {menuOpen ? <X /> : <Menu />}
+                    {menuAberto ? <X /> : <Menu />}
                 </button>
             </div>
 
-            {/* Mobile menu */}
-            {menuOpen && (
-                <nav className="md:hidden bg-background border-t border-border flex flex-col items-center py-4 space-y-4">
+            {/* menu mobile */}
+            {menuAberto && (
+                <nav className="md:hidden bg-background border-t border-border flex flex-col items-center py-5 space-y-4">
                     {links.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
-                            className="text-foreground hover:text-primary transition-colors"
-                            onClick={() => setMenuOpen(false)}
+                            onClick={() => setMenuAberto(false)}
+                            className="text-foreground hover:text-primary transition"
                         >
                             {link.label}
                         </a>
