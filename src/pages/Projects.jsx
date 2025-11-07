@@ -20,7 +20,7 @@ const projetos = [
     tech: ["React", "TypeScript", "TailwindCSS", "localStorage"],
     github: "https://github.com/mariaclaraalvess/crud-tarefas",
     live: "https://crud-tarefas-nu.vercel.app",
-    image: "https://github.com/mariaclaraalvess/crud-tarefas//imagens/Crud.jpg",
+    image: "https://mariaclaraalvess.github.io/crud-tarefas/imagens/Crud.jpg",
 },
 ];
 
