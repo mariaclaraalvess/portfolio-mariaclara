@@ -13,16 +13,15 @@ const projetos = [
         github: "https://github.com/mariaclaraalvess/fazenda-santa-rita-de-cassia",
         live: "https://mariaclaraalvess.github.io/fazenda-santa-rita-de-cassia/",
         image: "https://mariaclaraalvess.github.io/fazenda-santa-rita-de-cassia/imagens/por-do-sol.jpg",
-    },/*
-    {
-        title: "💻 CRUD de Usuários",
-        description:
-            "Projeto completo de cadastro e edição de usuários usando React Hooks e consumo de API com Axios.",
-        tech: ["React", "Axios", "Node.js"],
-        github: "https://github.com/seuusuario/crud-usuarios",
-        live: "#",
-        image: "https://placehold.co/600x400?text=CRUD+Usuários",
-    },*/
+    },{
+    title: "✅ CRUD de Tarefas",
+    description:
+        "Aplicação de gerenciamento de tarefas com funcionalidades de criação, edição e exclusão. Desenvolvida com React, TypeScript e estilizada com TailwindCSS.",
+    tech: ["React", "TypeScript", "TailwindCSS", "localStorage"],
+    github: "https://github.com/mariaclaraalvess/crud-tarefas",
+    live: "https://crud-tarefas-nu.vercel.app",
+    image: "https://placehold.co/600x400?text=CRUD+de+Tarefas",
+},
 ];
 
 export default function Projects() {
